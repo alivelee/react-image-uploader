@@ -1,11 +1,10 @@
-var debug = process.env.NODE_ENV !== "production";
+
 var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    devtool: debug ? 'source-map':null,
+    devtool: 'source-map',
     entry: [
-        'webpack-hot-middleware/client',
         './client/App.jsx'
     ],
     output: {
