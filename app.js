@@ -1,6 +1,6 @@
-const Server = require('./server.js')
-const port = (process.env.PORT || 8080)
-const app = Server.app()
+var express = require('express');
+var app = express();
 
-app.listen(port);
-console.log(`Listening at http://localhost:${port}`)
+app.use(express.static(__dirname + 'static'));
+
+app.listen(process.env.PORT || 8080);
