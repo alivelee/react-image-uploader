@@ -10,7 +10,7 @@ module.exports = {
     ],
     output: {
         path: path.join(__dirname, 'static'),
-        filename: 'bundle.js',
+        filename: 'bundle.min.js',
         publicPath: '/static/'
     },
     plugins: [
