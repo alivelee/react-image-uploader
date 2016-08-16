@@ -58,8 +58,7 @@ export default class ContactForm extends React.Component {
                         <div className="info-card">
                             <img src={this.state.uploadedFileCloudinaryUrl} />
                             <p>{this.state.uploadedFile.name}</p>
-                        </div>
-                    }
+                        </div>}
                 </div>
             </div>
             </form>
