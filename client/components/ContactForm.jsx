@@ -3,6 +3,7 @@ import Dropzone from 'react-dropzone';
 import request from 'superagent';
 const CLOUDINARY_UPLOAD_PRESET = 'vf6kahxm';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/do1szqbuv/upload';
+require('../styles/style.scss');
 export default class ContactForm extends React.Component {
     constructor(props) {
         super(props);
@@ -44,20 +45,23 @@ export default class ContactForm extends React.Component {
             <form>
                 <div className="FileUpload">
                     <Dropzone
+                        className="dropzone"
                         onDrop={this.onImageDrop.bind(this)}
                         multiple={false}
                         accept="image/*">
                         <div>Drop an image or click to select a file to upload.</div>
                     </Dropzone>
                 </div>
-
-                <div>
+            <div className="info-wrapper">
+                <div className="info">
                     {this.state.uploadedFileCloudinaryUrl === '' ? null :
-                        <div>
-                            <p>{this.state.uploadedFile.name}</p>
+                        <div className="info-card">
                             <img src={this.state.uploadedFileCloudinaryUrl} />
-                        </div>}
+                            <p>{this.state.uploadedFile.name}</p>
+                        </div>
+                    }
                 </div>
+            </div>
             </form>
         )
     }
